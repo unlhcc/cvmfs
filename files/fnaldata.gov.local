@@ -1,0 +1,6 @@
+CVMFS_PUBLIC_KEY=/etc/cvmfs/keys/fnaldata.gov.pub
+CVMFS_SERVER_URL="http://cvmfss1data.fnal.gov:8000/cvmfs/@fqrn@;http://hcc-cvmfs.unl.edu:8000/cvmfs/@fqrn@"
+CVMFS_ALIEN_CACHE=/lustre/cvmfs_alien_cache
+CVMFS_QUOTA_LIMIT=-1
+CVMFS_SHARED_CACHE=no
+CVMFS_HTTP_PROXY=DIRECT

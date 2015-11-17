@@ -1,0 +1,19 @@
+
+CVMFS_REPOSITORIES=cms.cern.ch,cms.hep.wisc.edu,darkside.opensciencegrid.org,fermilab.opensciencegrid.org,icecube.opensciencegrid.org,lsst.opensciencegrid.org,mu2e.opensciencegrid.org,oasis.opensciencegrid.org,usatlast3.opensciencegrid.org
+
+CVMFS_HTTP_PROXY="http://proxy.pki.hcc.unl.edu:3128;http://red-squid1.unl.edu:3128|http://red-squid2.unl.edu:3128"
+export CMS_LOCAL_SITE=/etc/cvmfs/SITECONF
+
+export CVMFS_NFILES=262144
+
+# Move cache to /scratch
+CVMFS_CACHE_BASE=/scratch/cvmfs2
+
+# Set CVMFS_CACHE_BASE to include mountpoint
+# This allows multiple mounts of the same CVMFS volume (needed for chroot)
+#   $mountpoint is set by mount.cvmfs
+#   We use it in the path to the cache, replacing "/" with "_", and dropping
+#   the leading "/"
+#20130906 Josh if [ -n "$mountpoint" ]; then
+#20130906 Josh     CVMFS_CACHE_BASE=$CVMFS_CACHE_BASE/`dirname ${mountpoint#/} | tr / _`
+#20130906 Josh fi
