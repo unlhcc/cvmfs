@@ -8,6 +8,12 @@ class cvmfs {
     include cvmfs::params
     #include autofs
 
+    package { "osg-oasis":
+        name    => "osg-oasis",
+        ensure  => present,
+        notify  => Service["autofs"],
+    }
+
     package { "cvmfs":
         name    => "${cvmfs::params::cvmfs_package_name}",
         ensure  => present,
@@ -46,6 +52,14 @@ class cvmfs {
         require    => [Group["cvmfs"], Package["fuse"]],
         managehome => false,
         shell      => '/sbin/nologin',
+    }
+
+    file { "/scratch/cvmfs2":
+        path    => "/scratch/cvmfs2",
+        mode    => "0755",
+        owner   => "root",
+        group   => "root",
+        ensure  => directory,
     }
 
 ## Files for talking to UW's CVMFS.
