@@ -231,7 +231,7 @@ class cvmfs {
         ensure  => directory,
         owner   => "cvmfs",
         group   => "cvmfs",
-        mode    => 0700,
+        mode    => "0700",
         require => [User["cvmfs"], Group["cvmfs"], Package["cvmfs"]],
     }
 
@@ -246,4 +246,3 @@ class cvmfs {
     }
 
 }
-
