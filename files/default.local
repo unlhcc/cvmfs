@@ -1,7 +1,7 @@
 
 CVMFS_REPOSITORIES=cms.cern.ch,cms.hep.wisc.edu,darkside.opensciencegrid.org,fermilab.opensciencegrid.org,icecube.opensciencegrid.org,lsst.opensciencegrid.org,mu2e.opensciencegrid.org,oasis.opensciencegrid.org,usatlast3.opensciencegrid.org
 
-CVMFS_HTTP_PROXY="http://red-squid.unl.edu;http://proxy.pki.hcc.unl.edu:3128;http://red-squid1.unl.edu:3128;http://red-squid2.unl.edu:3128"
+CVMFS_HTTP_PROXY="http://red-squid.unl.edu;http://proxy.pki.hcc.unl.edu:3128"
 export CMS_LOCAL_SITE=/etc/cvmfs/SITECONF
 
 export CVMFS_NFILES=262144
