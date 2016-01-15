@@ -6,7 +6,6 @@ CVMFS_HTTP_PROXY="<%= @cvmfs_http_proxy_list %>"
 <% else -%>
 CVMFS_HTTP_PROXY="<%= @cvmfs_http_proxy_list.join(';') %>"
 <% end -%>
-<% end -%>
 
 export CMS_LOCAL_SITE=/etc/cvmfs/SITECONF
 
