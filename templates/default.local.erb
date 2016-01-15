@@ -4,7 +4,7 @@ CVMFS_REPOSITORIES=cms.cern.ch,cms.hep.wisc.edu,darkside.opensciencegrid.org,fer
 <% if @cvmfs_http_proxy_list.class == String -%>
 CVMFS_HTTP_PROXY="<%= @cvmfs_http_proxy_list %>"
 <% else -%>
-CVMFS_HTTP_PROXY="<%= @cvmfs_http_proxy_list.join('\;') %>"
+CVMFS_HTTP_PROXY="<%= @cvmfs_http_proxy_list.join(';') %>"
 <% end -%>
 
 export CMS_LOCAL_SITE=/etc/cvmfs/SITECONF
