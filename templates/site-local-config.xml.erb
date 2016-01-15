@@ -17,12 +17,13 @@
       <!--<option value="-debug=true" />-->
       <catalog url="trivialcatalog_file://cvmfs/cms.cern.ch/SITECONF/<% @site_name %>/PhEDEx/storage.xml?protocol=srmv2"/>
       <se-name value="<%= @srm_name %>"/>
+      <phedex-node value="T2_US_Nebraska"/>
     </local-stage-out>
     <fallback-stage-out>
-      <se-name value="srm-dcache.rcac.purdue.edu"/>
-      <lfn-prefix value="srm://srm-dcache.rcac.purdue.edu:8443/srm/managerv2?SFN=/"/>
-      <command value="srmv2"/>
-      <option value="-debug"/>
+      <phedex-node value="T2_US_Purdue"/>
+      <se-name value="srm.rcac.purdue.edu"/>
+      <lfn-prefix value="srm://srm.rcac.purdue.edu:8443/srm/v2/server?SFN=/mnt/hadoop/"/>
+      <command value="srmv2-lcg"/>
     </fallback-stage-out>
     <calib-data>
         <frontier-connect>
