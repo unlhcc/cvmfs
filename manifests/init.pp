@@ -5,6 +5,15 @@
 #
 class cvmfs (
     $cvmfs_http_proxy_list = [ ],
+    $local_site_name = '',
+    $local_se_name = '',
+    $fallback_site_node = '',
+    $fallback_se_name = '',
+    $fallbac_lfn_prefix = '',
+    $xrootd = '',
+    $xrootdalt = '',
+    $srmv2 = '',
+    $backupproxy_list = [ ],
 ){
 
     include cvmfs::params

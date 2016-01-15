@@ -1,5 +1,5 @@
  <site-local-config>
- <site name="<%= @site_name %>">
+ <site name="<%= @local_site_name %>">
     <event-data>
       <catalog url="trivialcatalog_file://etc/cvmfs/SITECONF/PhEDEx/storage.xml?protocol=xrootd"/>
       <catalog url="trivialcatalog_file://etc/cvmfs/SITECONF/PhEDEx/storage.xml?protocol=xrootdalt"/>
@@ -16,13 +16,13 @@
       <command value="srmv2-lcg" />
       <!--<option value="-debug=true" />-->
       <catalog url="trivialcatalog_file://cvmfs/cms.cern.ch/SITECONF/<% @site_name %>/PhEDEx/storage.xml?protocol=srmv2"/>
-      <se-name value="<%= @srm_name %>"/>
-      <phedex-node value="T2_US_Nebraska"/>
+      <se-name value="<%= @local_se_name %>"/>
+      <phedex-node value="<%= @local_site_name %>"/>
     </local-stage-out>
     <fallback-stage-out>
-      <phedex-node value="T2_US_Purdue"/>
-      <se-name value="srm.rcac.purdue.edu"/>
-      <lfn-prefix value="srm://srm.rcac.purdue.edu:8443/srm/v2/server?SFN=/mnt/hadoop/"/>
+      <phedex-node value="<% @fallback_site_name %>"/>
+      <se-name value="<% @fallback_se_name %>"/>
+      <lfn-prefix value="<% @fallbac_lfn_prefix %>"/>
       <command value="srmv2-lcg"/>
     </fallback-stage-out>
     <calib-data>
@@ -33,6 +33,12 @@
         <% else -%>
         <% @cvmfs_http_proxy_list.each do |cvmfs_http_proxy| -%>
         <proxy url="<%= @cvmfs_http_proxy %>"/>
+        <% end -%>
+        <% if @backupproxy_list.class == String -%>
+        <proxy url="<%= @backupproxy_list %>"/>
+        <% else -%>
+        <% @backupproxy_list.each do |backupproxy| -%>
+        <backupproxy url="<%= @backupproxy %>"/>
         <% end -%>
         <server url="http://cmsfrontier.cern.ch:8000/FrontierInt"/>
         <server url="http://cmsfrontier1.cern.ch:8000/FrontierInt"/>
