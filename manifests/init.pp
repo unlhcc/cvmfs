@@ -153,7 +153,7 @@ class cvmfs {
         mode    => "0644",
         owner   => "root",
         group   => "root",
-        content => template('default.local.erb'),
+        content => template('cvmfs/default.local.erb'),
         require => Package["cvmfs"],
         ensure  => present,
     }
@@ -178,7 +178,7 @@ class cvmfs {
 
     file { "site-local-config.xml":
         path    => "/etc/cvmfs/SITECONF/JobConfig/site-local-config.xml",
-        content  => template('site-local-config.xml.erb'),
+        content  => template('cvmfs/site-local-config.xml.erb'),
         mode    => "0644", owner => "root", group => "root",
         ensure  => present,
         require => File["JobConfig_dir"],
@@ -193,7 +193,7 @@ class cvmfs {
 
     file { "storage.xml":
         path    => "/etc/cvmfs/SITECONF/PhEDEx/storage.xml",
-        content  => template('storage.xml.erb'),
+        content  => template('cvmfs/storage.xml.erb'),
         mode    => "0644", owner => "root", group => "root",
         ensure  => present,
         require => File["PhEDEx_dir"],
