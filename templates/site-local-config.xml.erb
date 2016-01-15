@@ -28,10 +28,10 @@
         <frontier-connect>
         <load balance="proxies"/>
         <% if @cvmfs_http_proxy_list.class == String -%>
-        <proxy url=" <%= @cvmfs_http_proxy_list %>"/>
+        <proxy url="<%= @cvmfs_http_proxy_list %>"/>
         <% else -%>
-        <% @ncvmfs_http_proxy_list.each do |cvmfs_http_proxy| -%>
-        <proxy url=" <%= cvmfs_http_proxy %>"/>
+        <% @cvmfs_http_proxy_list.each do |cvmfs_http_proxy| -%>
+        <proxy url="<%= cvmfs_http_proxy %>"/>
         <% end -%>
         <server url="http://cmsfrontier.cern.ch:8000/FrontierInt"/>
         <server url="http://cmsfrontier1.cern.ch:8000/FrontierInt"/>
