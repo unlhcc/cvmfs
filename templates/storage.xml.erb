@@ -1,0 +1,16 @@
+<storage-mapping>
+
+  <!-- LFN mappings... -->
+  <!-- Direct protocol rules -->
+  <lfn-to-pfn protocol="xrootd" destination-match=".*" path-match="/+store/(.*)" result="<% @xrootd %>"/>
+  <lfn-to-pfn protocol="xrootdalt" destination-match=".*" path-match="/+store/(.*)" result="<% @xrootdalt %>"/>
+
+  <!-- SRM protocol rules. -->
+  <!-- All normal transfers -->
+  <lfn-to-pfn protocol="srmv2"  destination-match=".*" path-match="/+store/(.*)" result="<% @srmv2 %>"/>
+
+  <!-- Reverse mappings... -->
+  <pfn-to-lfn protocol="direct" destination-match=".*" path-match=".*//(store/.*)" result="/$1"/>
+  <pfn-to-lfn protocol="srmv2"  destination-match=".*" chain="direct" path-match=".*\?SFN=(.*)" result="$1"/>
+
+</storage-mapping>
