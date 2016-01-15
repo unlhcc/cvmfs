@@ -3,7 +3,9 @@
 #
 # manages install and configuration of CVMFS
 #
-class cvmfs {
+class cvmfs (
+    $cvmfs_http_proxy_list = [ ],
+){
 
     include cvmfs::params
     #include autofs
