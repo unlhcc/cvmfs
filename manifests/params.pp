@@ -1,6 +1,6 @@
 class cvmfs::params {
 
-  $cvmfs_http_proxy_list = hiera("cvmfs_http_proxy_list")
+  $cvmfs_http_proxy_list = [ ]
 	$cvmfs_package_name = "cvmfs"
 	$cvmfs_service_name = "cvmfs"
 	$cvmfs_process_name = "cvmfs"
