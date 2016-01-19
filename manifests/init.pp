@@ -7,7 +7,7 @@ class cvmfs (
     $cvmfs_http_proxy_list = [ ],
     $local_site_name = '',
     $local_se_name = '',
-    $fallback_site_node = '',
+    $fallback_site_name = '',
     $fallback_se_name = '',
     $fallbac_lfn_prefix = '',
     $xrootd = '',
