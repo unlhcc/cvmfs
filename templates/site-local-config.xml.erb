@@ -33,13 +33,13 @@
         <% else -%>
         <% @cvmfs_http_proxy_list.each do |cvmfs_http_proxy| -%>
         <proxy url="<%= @cvmfs_http_proxy %>"/>
-        <% end -%>
-        <% if @backupproxy_list.class == String -%>
+      <% end -%>
+      <% if @backupproxy_list.class == String -%>
         <proxy url="<%= @backupproxy_list %>"/>
         <% else -%>
         <% @backupproxy_list.each do |backupproxy| -%>
         <backupproxy url="<%= @backupproxy %>"/>
-        <% end -%>
+      <% end -%>
         <server url="http://cmsfrontier.cern.ch:8000/FrontierInt"/>
         <server url="http://cmsfrontier1.cern.ch:8000/FrontierInt"/>
         <server url="http://cmsfrontier2.cern.ch:8000/FrontierInt"/>

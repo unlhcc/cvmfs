@@ -10,8 +10,8 @@ class cvmfs (
     $fallback_site_node = '',
     $fallback_se_name = '',
     $fallbac_lfn_prefix = '',
-    $xrootd = '',
-    $xrootdalt = '',
+    $xrootd,
+    $xrootdalt,
     $srmv2 = '',
     $backupproxy_list = [ ],
 ){
@@ -187,13 +187,13 @@ class cvmfs (
         require => File["SITECONF_dir"],
     }
 
-    file { "site-local-config.xml":
-        path    => "/etc/cvmfs/SITECONF/JobConfig/site-local-config.xml",
-        content  => template('cvmfs/site-local-config.xml.erb'),
-        mode    => "0644", owner => "root", group => "root",
-        ensure  => present,
-        require => File["JobConfig_dir"],
-    }
+    #file { "site-local-config.xml":
+    #    path    => "/etc/cvmfs/SITECONF/JobConfig/site-local-config.xml",
+    #    content  => template('cvmfs/site-local-config.xml.erb'),
+    #    mode    => "0644", owner => "root", group => "root",
+    #    ensure  => present,
+    #    require => File["JobConfig_dir"],
+    #}
 
     file { "PhEDEx_dir":
         path    => "/etc/cvmfs/SITECONF/PhEDEx",
