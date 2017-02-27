@@ -38,6 +38,11 @@ class cvmfs (
         require => Package["cvmfs"],
     }
 
+    package { "cvmfs-x509-helper":
+        name    => "cvmfs-x509-helper",
+        ensure  => present,
+    }
+
     package { "fuse":
         name   => "fuse.x86_64",
         ensure => present,
