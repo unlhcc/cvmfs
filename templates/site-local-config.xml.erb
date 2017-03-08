@@ -15,15 +15,15 @@
     <local-stage-out>
       <command value="gfal2" />
       <!--<option value="-debug=true" />-->
-      <catalog url="trivialcatalog_file://cvmfs/cms.cern.ch/SITECONF/<%= @local_site_name %>/PhEDEx/storage.xml?protocol=srmv2"/>
+      <catalog url="trivialcatalog_file://cvmfs/cms.cern.ch/SITECONF/local/PhEDEx/storage.xml?protocol=srmv2"/>
       <se-name value="<%= @local_se_name %>"/>
       <phedex-node value="<%= @local_site_name %>"/>
     </local-stage-out>
     <fallback-stage-out>
       <phedex-node value="<%= @fallback_site_name %>"/>
       <se-name value="<%= @fallback_se_name %>"/>
-      <lfn-prefix value="<%= @fallbac_lfn_prefix %>"/>
-      <command value="srmv2-lcg"/>
+      <lfn-prefix value="<%= @fallback_lfn_prefix %>"/>
+      <command value="gfal2"/>
     </fallback-stage-out>
     <calib-data>
         <frontier-connect>

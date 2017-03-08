@@ -9,7 +9,7 @@ class cvmfs (
     $local_se_name = '',
     $fallback_site_name = '',
     $fallback_se_name = '',
-    $fallbac_lfn_prefix = '',
+    $fallback_lfn_prefix = '',
     $xrootd = '',
     $xrootdalt = '',
     $srmv2 = '',
