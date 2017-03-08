@@ -1,16 +1,15 @@
 <storage-mapping>
 
   <!-- LFN mappings... -->
-  <!-- Direct protocol rules -->
-  <lfn-to-pfn protocol="xrootd" destination-match=".*" path-match="/+store/(.*)" result="<%= @xrootd %>"/>
+  <!-- xrootd rules -->
+  <lfn-to-pfn protocol="xrootd"    destination-match=".*" path-match="/+store/(.*)" result="<%= @xrootd %>"/>
   <lfn-to-pfn protocol="xrootdalt" destination-match=".*" path-match="/+store/(.*)" result="<%= @xrootdalt %>"/>
 
   <!-- SRM protocol rules. -->
-  <!-- All normal transfers -->
-  <lfn-to-pfn protocol="srmv2"  destination-match=".*" path-match="/+store/(.*)" result="<%= @srmv2 %>"/>
+  <lfn-to-pfn protocol="srmv2"  destination-match=".*" path-match="/+store/(.*)" result="<%= @srmv2 %>/store/$1"/>
 
   <!-- Reverse mappings... -->
-  <pfn-to-lfn protocol="direct" destination-match=".*" path-match=".*//(store/.*)" result="/$1"/>
-  <pfn-to-lfn protocol="srmv2"  destination-match=".*" chain="direct" path-match=".*\?SFN=(.*)" result="$1"/>
+  <pfn-to-lfn protocol="srmv2"  destination-match=".*" path-match="<%= @srmv2 %>/(.*)" result="/$1"/>
+  <pfn-to-lfn protocol="xrootd" destination-match=".*" path-match=".*//store/(.*)\?(mxredir=16)?" result="/store/$1"/>
 
 </storage-mapping>
